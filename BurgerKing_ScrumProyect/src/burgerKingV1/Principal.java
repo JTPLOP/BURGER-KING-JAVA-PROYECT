@@ -6,6 +6,7 @@ public class Principal {
 		// TODO Auto-generated method stub
 
 		System.out.println("Esto es una prueba");
+		System.out.println("Esto es una segunda prueba");
 	}
 
 }
