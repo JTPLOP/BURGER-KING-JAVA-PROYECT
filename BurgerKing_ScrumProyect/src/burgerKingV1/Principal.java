@@ -21,7 +21,7 @@ public class Principal {
 
 		// MENÚS
 		do {
-			System.out.println("Inrouzca 0 para terminar su pedido");
+			System.out.println("Introduzca 0 para terminar su pedido");
 			System.out.println("Introduzca 1 para ver las ofertas ");
 			System.out.println("Introduzca 2 para ver las novedades ");
 			System.out.println("Introduzca 3 para ver los menús completos"); // aquí van también los postres y las
@@ -77,7 +77,8 @@ public class Principal {
 					System.out.println("Introduzca 1 para ver 'Menú Grand BBQ' ");
 					System.out.println("Introduzca 2 para ver 'Menú DOBLE WHISKEY'");
 					System.out.println("Introduzca 3 para ver 'Menú KIRSSPER'");
-					System.out.println("Introduzca 4 para ver 'Menú SPICY LONG CHICKEN'");
+					System.out.println("Introduzca 4 para ver 'Menú  SPICY LONG CHICKEN'");
+					System.out.println("Hola hola");
 					opcion = Leer.datoInt();
 
 					switch (opcion) {
