@@ -27,13 +27,13 @@ public class Principal {
 		//Informacion Producto
 		
 			System.out.println("\n¿Deseas agregar (el ejemplo) a tu pedido?");
-			System.out.println("-------------------------\nPulse 1 para agregar \n-------------------------\n-------------------------\nPulse 0 para volver atras\n-------------------------");
+			System.out.println("-------------------------\nPulse 1 para agregar \n-------------------------\n-------------------------\nPulse 0 para volver atrás\n-------------------------");
 			opcion=Leer.datoInt();
 			
 			switch (opcion) {
 			
 				case 0: 
-				System.out.println("\nVolviendo atras...");
+				System.out.println("\nVolviendo atrás...");
 				break; 
 				
 				case 1: 
@@ -42,12 +42,12 @@ public class Principal {
 					
 					cesta+=ejemplo[0]*cantidadMenu;
 					
-					System.out.println("Se ha agregado correctamente al pedido ("+(ejemplo[0]*cantidadMenu)+"€).");
+					System.out.println("Se ha agregado correctamente a la cesta "+(ejemplo[0]*cantidadMenu)+"€.");
 					
 					break;
 				
 				default:
-					System.err.println("El valor introducido es incorrecto, vuelva a introducir su menu.");
+					System.err.println("El valor introducido es incorrecto, vuelva a introducir su menú.");
 					break;	
 			}
 			
