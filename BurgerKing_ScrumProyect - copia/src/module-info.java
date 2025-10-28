@@ -1,8 +1,0 @@
-/**
- * 
- */
-/**
- * 
- */
-module BurgerKing_ScrumProyect {
-}
