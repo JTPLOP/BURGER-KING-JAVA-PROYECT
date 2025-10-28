@@ -11,7 +11,7 @@ public class Principal {
 						//DEFINIR PORYECTO EXPLICACION
 		//DEFINIR PARTES REALIZADAS POR CADA UNO, happy wheel, diseño, aleatorio, recibir codes tras superar precio compras
 		
-//PARA MEJORAR ---------------------------------------------> PONER IF PARA QUE EL USUARIO NO PUEDA PONER AÑADIR 0 A LA CESTA, poner nombre usuario antes de bucle para indicar en todo el programa
+//PARA MEJORAR ---------------------------------------------> PONER IF PARA QUE EL USUARIO NO PUEDA PONER AÑADIR 0 A LA CESTA, poner nombre usuario antes de bucle para indicar en todo el programa, cambiar code de desc por code de ruleta tirada
 
 		// VARIABLES
 		int opcion, opcion2, opcion3, tam=4;
@@ -46,6 +46,7 @@ public class Principal {
 		boolean pedidoConfirmado = false;  // Para saber si ya se tramitó
 		String metodoPago = "";            // Para simular pago (efectivo/tarjeta)
 		double totalFinal = 0;             // Copia de cesta + descuentos finales (si aplicas más)
+		double dineroAbonado = 0, dineroDevuelto=0;
 
 		//Array novedades
 		String [] nombresNovedades = {"Menú Grand BBQ", "Menú DOBLE WHISKEY", "Menú KIRSSPER", "Menú SPICY LONG CHICKEN"};
@@ -1436,7 +1437,22 @@ public class Principal {
 			case 5:
 					// SUBMENÚ Código de promoción --- Inicio
 					System.out.println("\n-----------------------------------------\nUsted se encuentra en los códigos de descuento \n-----------------------------------------");
-					System.out.println("\n¿Presenta usted un código de descuento?");
+
+					if (cesta < 50) {
+       				 System.out.println("╔══════════════════════════════════════╗");
+       				 System.out.println("║ ¡Casi! Necesitas al menos 50€ en tu  ║");
+       				 System.out.println("║ cesta para desbloquear el código. 😏 ║");
+       				 System.out.printf("║ Actual: %.2f€ - ¡Añade más! 🍔      ║\n", cesta);
+       				 System.out.println("╚══════════════════════════════════════╝");
+       				 break;  // Regresa al menú principal sin proceder
+    				}
+
+					// Si llega aquí, cesta >=50: Muestra el código
+   					 System.out.println("¡Felicidades! Tu cesta supera los 50€. 🎉");
+   					 System.out.println("Tu código promocional es: BKONFIRE");
+  					 System.out.println("Úsalo ahora para la Ruleta de la Suerte.");
+
+					System.out.println("\n¿Quiere usted presentar un código de descuent0?");
 
 					System.out.println("Introduzca 0 para salir");
 					System.out.println("Introduzca 1 para introducir el código de descuento");
@@ -1578,7 +1594,18 @@ public class Principal {
 
             switch (pago) {
                 case 1:
-                    metodoPago = "Efectivo";
+                    System.out.println("Has elegido pago en efectivo.");
+                    System.out.printf("Total a pagar: %.2f€\n", totalFinal);
+					System.out.println("Introduzca la cantidad de dinero que desee abonar:");
+					dineroAbonado=Leer.datoDouble();
+
+					if (dineroAbonado < totalFinal) {
+						System.out.println("Error, cantidad insuficiente");
+						break;
+					} else {
+						System.out.printf("\nDinero devuelto: %.2f€", dineroDevuelto);
+						System.out.println("\nPago realizado con éxito");
+					}
                     break;
                 case 2:
                     metodoPago = "Tarjeta";
